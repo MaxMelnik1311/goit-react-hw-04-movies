@@ -39,7 +39,7 @@ export default class HomePage extends Component {
                 <Link
                   to={{
                     pathname: `movies/${result.id}`,
-                    state: { from: this.props.location },
+                    state: this.props.location,
                   }}
                 >
                   {result.title}
