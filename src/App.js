@@ -3,7 +3,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import MoviesPage from './pages/MoviesPage';
 import MovieDetailsPage from './pages/MovieDetailsPage';
-// import NotFound from '../views/NotFound';
 import Layout from './components/Layout';
 import routes from './routes';
 

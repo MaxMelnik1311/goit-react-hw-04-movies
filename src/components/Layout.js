@@ -1,4 +1,5 @@
 import React from 'react';
+import T from 'prop-types';
 import Appbar from './Appbar';
 
 const styles = {
@@ -16,5 +17,9 @@ const Layout = ({ children }) => (
     {children}
   </div>
 );
+
+Layout.propTypes = {
+  children: T.shape().isRequired,
+};
 
 export default Layout;

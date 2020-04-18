@@ -29,7 +29,15 @@ function Cast({ filmCastList }) {
 }
 
 Cast.propTypes = {
-  filmCastList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filmCastList: PropTypes.shape(
+    PropTypes.exact({
+      cast_id: PropTypes.number.isRequired,
+      character: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      gender: PropTypes.string.isRequired,
+      profile_path: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default Cast;

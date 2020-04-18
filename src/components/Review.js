@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Rewiew({ results }) {
+function Review({ reviewsList }) {
   return (
     <div>
-      {results.map(({ author, content }) => (
-        <div key={author}>
+      {reviewsList.map(({ author, content, id }) => (
+        <div key={id}>
           <h4>{author}</h4>
           <p>{content}</p>
         </div>
@@ -14,8 +14,14 @@ function Rewiew({ results }) {
   );
 }
 
-Rewiew.propTypes = {
-  results: PropTypes.arrayOf(PropTypes.object).isRequired,
+Review.propTypes = {
+  reviewsList: PropTypes.arrayOf(
+    PropTypes.shape({
+      author: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
-export default Rewiew;
+export default Review;
